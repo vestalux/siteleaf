@@ -7,9 +7,9 @@
     {% seo title=false %}
     {% unless page.image %}<meta name="twitter:image" content="{{ site.url }}/assets/avatar.png"/>{% endunless %}
     <title>{{ page.title }}{% if page.url != '/' %} - Siteleaf{% endif %}</title>
-    {% if page.url == '/plans/' %}<link rel="stylesheet" href="/styles/plan-summary-cards.css" />{% endif %}
-    <link rel="stylesheet" href="{{ "styles/all.css" | relative_url" }}" />
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    {% if page.url == '/plans/' %}<link rel="stylesheet" href="{{ "styles/plan-summary-cards.css" | relative_url }}" />{% endif %}
+    <link rel="stylesheet" href="{{ "styles/all.css" | relative_url }}" />
+    <link rel="icon" type="image/x-icon" href="{{ "assets/favicon.ico" | relative_url }}" />
     <link rel="alternate" type="application/rss+xml" title="Siteleaf: Blog (RSS)" href="{{ site.url }}/feed.xml" />
     <link rel="alternate" type="application/json" title="Siteleaf: Blog (JSON)" href="{{ site.url }}/feed.json" />
   </head>
@@ -29,7 +29,7 @@
       {{ content }}
     </div>
     {% include footer.html %}
-    {% if page.url == '/plans/' %}<script src="/scripts/plan-summary-cards.js"></script>{% endif %}
-    <script src="/scripts/all.js"></script>
+    {% if page.url == '/plans/' %}<script src="{{ "scripts/plan-summary-cards.js" | relative_url }}"></script>{% endif %}
+    <script src="{{ "scripts/all.js" | relative_url }}"></script>
   </body>
 </html>
